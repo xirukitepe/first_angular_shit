@@ -1,0 +1,37 @@
+.row{"ng-app" => "AngularRails", "ng-controller" => "MagazinesController", "ng-init" => "getBooks()"}
+
+  .col-md-12
+
+    %form{"ng-submit" => "save()"}
+
+      .form-group
+
+        %label Title
+
+        %input{type: "text", "ng-model" => "book.title", class: "form-control"}
+
+      .form-group
+
+        %label Author
+
+        %input{type: "text", "ng-model" => "book.author", class: "form-control"}
+
+        %button.btn.btn-primary
+
+          Save
+
+      %h3 Bookshelf
+
+      %ul
+
+        %li{"ng-repeat" => "book in books"}
+
+          .btn.btn-default{"ng-click" => "edit(book)"}
+
+            edit
+
+          .btn.btn-default{"ng-click" => "delete(book)"}
+
+            x
+
+          {{ book.title }} by {{ book.author }}
