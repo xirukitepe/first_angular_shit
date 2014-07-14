@@ -1,6 +1,6 @@
 AngularTest::Application.routes.draw do
   get "secure/show"
-  devise_for :users
+  devise_for :users, :controllers => { :sessions => "sessions" }
   get "router/show"
   get "routing/show"
   resources :games
